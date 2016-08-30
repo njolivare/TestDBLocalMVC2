@@ -1,0 +1,60 @@
+﻿@model TestDBLocalMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Crear Cliente</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cliente</legend>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Nombre)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Apellido)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Email) </b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Identificacion)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Identificacion)
+            @Html.ValidationMessageFor(model => model.Identificacion)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar a la Lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

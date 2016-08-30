@@ -1,0 +1,62 @@
+﻿@model TestDBLocalMVC.Models.PlanCelular
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Planes</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PlanCelular</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Codigo)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+
+        <div class="editor-label">
+           <b> @Html.LabelFor(model => model.Nombre)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.TarifaBasica)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TarifaBasica)
+            @Html.ValidationMessageFor(model => model.TarifaBasica)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.EsAL)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EsAL)
+            @Html.ValidationMessageFor(model => model.EsAL)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar a la Lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

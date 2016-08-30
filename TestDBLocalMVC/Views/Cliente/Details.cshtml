@@ -1,0 +1,43 @@
+﻿@model TestDBLocalMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles Cliente</h2>
+
+<fieldset>
+    <legend>Cliente</legend>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Nombre)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Apellido)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Email)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Identificacion)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Identificacion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Regresar a la Lista", "Index")
+</p>

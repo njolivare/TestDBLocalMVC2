@@ -1,0 +1,60 @@
+﻿@model TestDBLocalMVC.Models.Cuenta
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Crear Cuenta</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cuenta</legend>
+
+        <div class="editor-label">
+            <b> @Html.LabelFor(model => model.Numero) </b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Numero)
+            @Html.ValidationMessageFor(model => model.Numero)
+        </div>
+
+        <div class="editor-label">
+           <b> @Html.LabelFor(model => model.Telefono)</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefono)
+            @Html.ValidationMessageFor(model => model.Telefono)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.PlanId, "PlanCelular")</b>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PlanId", String.Empty)
+            @Html.ValidationMessageFor(model => model.PlanId)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.ClienteId, "Cliente")</b>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ClienteId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ClienteId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar a la lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

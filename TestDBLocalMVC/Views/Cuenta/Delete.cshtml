@@ -1,0 +1,47 @@
+﻿@model TestDBLocalMVC.Models.Cuenta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Cuenta</h2>
+
+<h3>Esta seguro de que desea eliminar la cuenta?</h3>
+<fieldset>
+    <legend>Cuenta</legend>
+
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.Numero)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numero)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Telefono)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefono)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.PlanCelular.Codigo)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlanCelular.Codigo)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Cliente.Nombre)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nombre)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Regresar a la lista", "Index")
+    </p>
+}

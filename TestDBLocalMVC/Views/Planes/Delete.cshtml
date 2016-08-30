@@ -1,0 +1,48 @@
+﻿@model TestDBLocalMVC.Models.PlanCelular
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Planes</h2>
+
+<h3>Esta seguro de que desea eliminar este Plan?</h3>
+
+<fieldset>
+    <legend>PlanCelular</legend>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Codigo)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Nombre)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.TarifaBasica)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TarifaBasica)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.EsAL)</b>
+</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EsAL)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Regresar a la Lista", "Index")
+    </p>
+}
